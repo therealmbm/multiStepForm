@@ -59,7 +59,7 @@ updatePlanPrice();
                     ? 'border-purplish-blue'
                     : 'border-light-gray bg-white hover:border-purplish-blue'
             ]">
-                <img :src="`src/assets/icons/${plan.icon}`" :alt="plan.name" class="w-12 h-12 mb-4" />
+                <img :src="`./src/assets/icons/${plan.icon}`" :alt="plan.name" class="w-12 h-12 mb-4" />
                 <h2 class="text-lg font-bold font-ubuntu text-marine-blue mt-8">{{ plan.name }}</h2>
                 <p class="text-cool-gray text-sm mt-2">
                     {{ selectedPlan.billing === 'Monthly' ? plan.monthlyPrice : plan.yearlyPrice }}
