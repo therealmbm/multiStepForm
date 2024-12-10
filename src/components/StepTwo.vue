@@ -11,13 +11,6 @@ const selectedPlan = reactive({
 
 const plans = plansData.plans;
 
-// Map plan names to their respective images (static import)
-const planIcons = {
-    Arcade: '@/assets/icons/arcade.svg',
-    Advanced: '@/assets/icons/advanced.svg',
-    Pro: '@/assets/icons/pro.svg'
-};
-
 const selectPlan = (planName) => {
     selectedPlan.current = planName;
     updatePlanPrice();
@@ -66,8 +59,7 @@ updatePlanPrice();
                     ? 'border-purplish-blue'
                     : 'border-light-gray bg-white hover:border-purplish-blue'
             ]">
-                <!-- Use statically imported icons -->
-                <img :src="planIcons[plan.name]" :alt="plan.name" class="w-12 h-12 mb-4" />
+                <img :src="`/src/components/assets/icons/${plan.icon}`" :alt="plan.name" class="w-12 h-12 mb-4" />
                 <h2 class="text-lg font-bold font-ubuntu text-marine-blue mt-8">{{ plan.name }}</h2>
                 <p class="text-cool-gray text-sm mt-2">
                     {{ selectedPlan.billing === 'Monthly' ? plan.monthlyPrice : plan.yearlyPrice }}
