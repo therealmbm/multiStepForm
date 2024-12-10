@@ -11,6 +11,9 @@ const selectedPlan = reactive({
 
 const plans = plansData.plans;
 
+// Dynamically import the plan icons
+const planIcons = import.meta.glob('@/assets/icons/*.svg', { eager: true });
+
 const selectPlan = (planName) => {
     selectedPlan.current = planName;
     updatePlanPrice();
@@ -59,7 +62,8 @@ updatePlanPrice();
                     ? 'border-purplish-blue'
                     : 'border-light-gray bg-white hover:border-purplish-blue'
             ]">
-                <img :src="require(`@/assets/icons/${plan.icon}`)" :alt="plan.name" class="w-12 h-12 mb-4" />
+                <!-- Dynamically load the image using import.meta.glob -->
+                <img :src="planIcons[`@/assets/icons/${plan.icon}`]" :alt="plan.name" class="w-12 h-12 mb-4" />
                 <h2 class="text-lg font-bold font-ubuntu text-marine-blue mt-8">{{ plan.name }}</h2>
                 <p class="text-cool-gray text-sm mt-2">
                     {{ selectedPlan.billing === 'Monthly' ? plan.monthlyPrice : plan.yearlyPrice }}
