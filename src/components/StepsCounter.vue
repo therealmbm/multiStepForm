@@ -57,18 +57,6 @@ defineProps({
                     </div>
                 </div>
             </li>
-            <li class="py-7">
-                <div class="flex gap-5">
-                    <p :class="[
-                        'font-bold w-fit py-2 px-4 rounded-full',
-                        currentStep === 5 ? 'bg-pastel-blue text-marine-blue' : 'border border-pastel-blue text-white'
-                    ]">5</p>
-                    <div class="items-center leading-3">
-                        <p class="font-extralight">STEP 5</p>
-                        <h3 class="text-lg font-semibold tracking-widest">FINISH</h3>
-                    </div>
-                </div>
-            </li>
         </ul>
     </div>
 </template>
