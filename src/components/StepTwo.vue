@@ -13,9 +13,9 @@ const plans = plansData.plans;
 
 // Map plan names to their respective images (static import)
 const planIcons = {
-    Arcade: require('@/assets/icons/arcade.svg'),
-    Advanced: require('@/assets/icons/advanced.svg'),
-    Pro: require('@/assets/icons/pro.svg')
+    Arcade: '@/assets/icons/arcade.svg',
+    Advanced: '@/assets/icons/advanced.svg',
+    Pro: '@/assets/icons/pro.svg'
 };
 
 const selectPlan = (planName) => {
